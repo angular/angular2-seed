@@ -1,0 +1,20 @@
+{
+  "name": "angular2-seed",
+  "version": "1.0.0",
+  "description": "A simple starter Angular2 project",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular2-seed.git"
+  },
+  "keywords": [
+    "Angular2"
+  ],
+  "author": "Rob Wormald <robwormald@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/angular/angular2-seed/issues"
+  },
+  "homepage": "https://github.com/angular/angular2-seed#readme"
+}
