@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "webpack-dev-server --inline --colors --display-error-details --display-cached --port 8080 --content-base src"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular2-seed.git"
@@ -16,5 +18,15 @@
   "bugs": {
     "url": "https://github.com/angular/angular2-seed/issues"
   },
-  "homepage": "https://github.com/angular/angular2-seed#readme"
+  "homepage": "https://github.com/angular/angular2-seed#readme",
+  "devDependencies": {
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.3",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+    "webpack-livereload-plugin": "^0.4.0"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.48"
+  }
 }
