@@ -23,8 +23,7 @@
     "ts-loader": "^0.7.2",
     "typescript": "^1.7.3",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
-    "webpack-livereload-plugin": "^0.4.0"
+    "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.50"

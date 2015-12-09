@@ -1,14 +1,9 @@
-var LiveReloadPlugin = require('webpack-livereload-plugin');
 var webpack = require('webpack');
 
 module.exports = {
   resolve: {
     extensions: ['', '.scss', '.ts', '.js']
   },
-
-  plugins: [
-    new LiveReloadPlugin()
-  ],
 
   entry: './src/main.ts',
   output: {
@@ -27,7 +22,6 @@ module.exports = {
   },
 
   devServer: {
-    historyApiFallback: true,
-    hot: false
+    historyApiFallback: true
   }
 };
