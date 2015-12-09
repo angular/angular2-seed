@@ -10,7 +10,7 @@ const APP_PROVIDERS = [
   HTTP_PROVIDERS
 ];
 
-import {App} from './app/components/app';
+import {App} from './components/app/app';
 
 bootstrap(App, [APP_PROVIDERS])
   .catch(err => console.error(err));
