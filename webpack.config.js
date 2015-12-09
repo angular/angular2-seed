@@ -1,4 +1,5 @@
 var LiveReloadPlugin = require('webpack-livereload-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
@@ -7,6 +8,10 @@ module.exports = {
   },
 
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      inject: 'body'
+    }),
     new LiveReloadPlugin()
   ],
 
