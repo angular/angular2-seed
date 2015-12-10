@@ -26,6 +26,6 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.50"
+    "angular2": "^2.0.0-alpha.52"
   }
 }

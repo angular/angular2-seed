@@ -1,5 +1,6 @@
 import {Component} from 'angular2/angular2';
 import {Header} from '../header/header'
+import {Http} from 'angular2/http'
 
 @Component({
 	selector: 'app',
@@ -9,4 +10,10 @@ import {Header} from '../header/header'
 	`,
 	directives: [Header]
 })
-export class App {}
+export class App {
+	constructor(http:Http){
+		http.get('data.json')
+		  .map(res => res.json())
+			.subscribe(v => console.log(v));
+	}
+}

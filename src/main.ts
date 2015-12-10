@@ -9,6 +9,7 @@ const APP_PROVIDERS = [
   ROUTER_PROVIDERS,
   HTTP_PROVIDERS
 ];
+import 'rxjs/Rx';
 
 import {App} from './components/app/app';
 
