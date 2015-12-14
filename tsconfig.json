@@ -10,9 +10,6 @@
         "experimentalDecorators": true,
         "moduleResolution": "node"
     },
-    "files": [
-      "src/main.ts"
-    ],
     "exclude": [
         "node_modules"
     ]
