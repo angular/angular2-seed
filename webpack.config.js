@@ -5,11 +5,24 @@ module.exports = {
     extensions: ['', '.scss', '.ts', '.js']
   },
 
-  entry: './src/main.ts',
+  entry: {
+    'app': './src/app.ts',
+    'vendor': [
+      'zone.js',
+      'reflect-metadata',
+      'angular2/platform/browser',
+      'angular2/core',
+      'angular2/http',
+      'angular2/router'
+     ]
+  },
   output: {
     path: "./dist",
     filename: "bundle.js"
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
+  ],
 
   module: {
     loaders: [

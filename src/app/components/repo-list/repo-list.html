@@ -1,0 +1,4 @@
+<h3>Repo list</h3>
+<ul>
+	<li *ngFor="#repo of repos | async"><a [routerLink]="['RepoDetail', {org: repo.owner.login, name: repo.name}]">{{repo.name}}</a></li>
+</ul>
