@@ -8,8 +8,6 @@ module.exports = {
   entry: {
     'app': './src/app.ts',
     'vendor': [
-      'zone.js',
-      'reflect-metadata',
       'angular2/platform/browser',
       'angular2/core',
       'angular2/http',
