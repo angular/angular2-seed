@@ -1,8 +1,12 @@
 //es5 file to bootstrap our application
 System.config({
-	
+	packages: {
+		app: {
+			defaultExtension: 'js'
+		}
+	}
 });
 
-System.import('src/app.ts').catch(function(err){
+System.import('./app.js').catch(function(err){
 	console.error(err);
 });

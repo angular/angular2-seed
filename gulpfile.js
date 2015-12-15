@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var util = require('gulp-util');
 var SystemBuilder = require('systemjs-builder');
 var watch = require('gulp-watch');
+var ts = require('gulp-typescript');
+var tsConfig = require('./tsconfig.json');
 
 function getBuilder(configPath){
 	var builder = new SystemBuilder();
@@ -11,9 +13,15 @@ function getBuilder(configPath){
 		});
 }
 
+var tsProject = ts.createProject(tsConfig.compilerOptions);
+
 gulp.task('copy', function(){
 	return gulp.src([
 		'node_modules/angular2/bundles/angular2-polyfills.js',
+		'node_modules/angular2/bundles/angular2.dev.js',
+		'node_modules/angular2/bundles/http.js',
+		'node_modules/angular2/bundles/router.js',
+		'node_modules/rxjs/bundles/Rx.js',
 		'node_modules/systemjs/dist/system.js',
 		'src/bootstrap.js',
 		'src/index.html',
@@ -22,21 +30,13 @@ gulp.task('copy', function(){
 	]).pipe(gulp.dest('dist'));
 });
 
-gulp.task('compile:dependencies', function(){
-	return getBuilder('./system.config.js')
-	  .then(function(builder){
-			return builder.bundle('app - [app/**/*]', 'dist/vendor.js', { minify: util.env.production });
-		});
-});
-
 gulp.task('compile:app', function(){
-	return getBuilder('./system.config.js')
-	  .then(function(builder){
-			return builder.bundle('app - dist/vendor.js', 'dist/app.js', { minify: util.env.production });
-		});
+	return gulp.src('src/**/*.ts')
+	  .pipe(ts(tsProject))
+		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['compile:dependencies'], function(){
+gulp.task('default', ['compile:dependencies', 'copy'], function(){
 	gulp.watch(['src/**/*.ts'], ['compile:app']);
 	gulp.watch(['src/**/.js', 'src/index.html'], ['copy']);
 })
