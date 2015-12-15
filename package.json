@@ -4,7 +4,7 @@
   "description": "A simple starter Angular2 project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src"
+    "start": "gulp clean && gulp"
   },
   "repository": {
     "type": "git",
@@ -20,15 +20,20 @@
   },
   "homepage": "https://github.com/angular/angular2-seed#readme",
   "devDependencies": {
-    "ts-loader": "^0.7.2",
-    "typescript": "^1.7.3",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-typescript": "^2.10.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "systemjs": "^0.19.6",
+    "systemjs-builder": "^0.14.11",
+    "typescript": "^1.7.3"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.54",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3",
+    "angular2": "2.0.0-beta.0",
+    "es6-promise": "3.0.2",
+    "es6-shim": "0.33.3",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
     "zone.js": "0.5.10"
