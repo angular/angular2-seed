@@ -4,7 +4,8 @@
   "description": "A simple starter Angular2 project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src"
+    "start": "npm run copy_deps && webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src",
+    "copy_deps": "node ./deps.js"
   },
   "repository": {
     "type": "git",
