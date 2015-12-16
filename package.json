@@ -2,17 +2,16 @@
   "name": "angular2-seed",
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
-  "main": "index.js",
   "scripts": {
-    "start": "npm run copy_deps && webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src",
-    "copy_deps": "node ./deps.js"
+    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angular/angular2-seed.git"
   },
   "keywords": [
-    "Angular2"
+    "Angular2",
+    "angular2-seed"
   ],
   "author": "Rob Wormald <robwormald@gmail.com>",
   "license": "Apache-2.0",

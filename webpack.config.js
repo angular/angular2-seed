@@ -1,18 +1,9 @@
 var webpack = require('webpack');
 
 module.exports = {
-  resolve: {
-    extensions: ['', '.scss', '.ts', '.js']
-  },
-
   entry: {
     'app': './src/app.ts',
-    'vendor': [
-      'angular2/platform/browser',
-      'angular2/core',
-      'angular2/http',
-      'angular2/router'
-     ]
+    'vendor': './src/vendor.ts'
   },
   output: {
     path: "./dist",
@@ -22,14 +13,15 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ],
 
+  resolve: {
+    extensions: ['', '.ts', '.js']
+  },
+
   module: {
     loaders: [
-      {
-        test: /\.ts$/,
-        loader: 'ts-loader'
-      },
-      
-    ]
+      { test: /\.ts$/, loader: 'ts-loader' },
+    ],
+    noParse: [ /angular2\/bundles\/.+/ ]
   },
 
   devServer: {
