@@ -9,6 +9,7 @@ module.exports = {
     path: "./dist",
     filename: "bundle.js"
   },
+
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ],
@@ -20,11 +21,12 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader' },
-    ],
-    noParse: [ /angular2\/bundles\/.+/ ]
+    ]
   },
 
   devServer: {
     historyApiFallback: true
-  }
+  },
+
+  node: { crypto: 'empty' } // we need this for 'reflect-metadata' polyfill
 };
