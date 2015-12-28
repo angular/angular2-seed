@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: {
@@ -21,7 +22,7 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader' },
     ],
-    noParse: [ /angular2\/bundles\/.+/ ]
+    noParse: [ path.join(__dirname, 'node_modules', 'angular2', 'bundles') ]
   },
 
   devServer: {
