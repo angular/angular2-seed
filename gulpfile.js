@@ -43,18 +43,18 @@ gulp.task('clean', function(cb){
 //compile app typescript files
 gulp.task('compile:app', function(){
 	return gulp.src('src/**/*.ts')
-	  .pipe(ts(tsProject))
+		.pipe(ts(tsProject))
 		.pipe(gulp.dest('./dist'))
 		.pipe(connect.reload());
 });
 
 //live reload server
 gulp.task('server', ['copy:deps', 'copy:src','compile:app'], function() {
-  connect.server({
-    root: 'dist',
-    livereload: true,
+	connect.server({
+		root: 'dist',
+		livereload: true,
 		fallback: 'dist/index.html'
-  });
+	});
 });
 
 
