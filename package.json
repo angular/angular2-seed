@@ -14,7 +14,7 @@
     "angular2-seed"
   ],
   "author": "Rob Wormald <robwormald@gmail.com>",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/angular/angular2-seed/issues"
   },
