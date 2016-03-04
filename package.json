@@ -4,7 +4,7 @@
   "description": "A simple starter Angular2 project",
   "scripts": {
     "prestart": "npm install",
-    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8080 --content-base app"
+    "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000 --content-base app"
   },
   "repository": {
     "type": "git",
