@@ -1,12 +1,12 @@
 import {Component} from 'angular2/core';
 import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Http} from 'angular2/http';
-import {Github} from '../../services/github';
+import {Github} from '../repo-browser/repo-browser.service.ts';
 
 @Component({
   selector: 'repo-detail',
-  templateUrl: 'app/components/repo-detail/repo-detail.html',
-  styleUrls: ['app/components/repo-detail/repo-detail.css'],
+  templateUrl: 'repo-detail/repo-detail.html',
+  styleUrls: ['repo-detail/repo-detail.css'],
   providers: [],
   directives: [ROUTER_DIRECTIVES],
   pipes: []
