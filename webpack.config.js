@@ -3,8 +3,8 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    'app': './src/app.ts',
-    'vendor': './src/vendor.ts'
+    'app': './app/app.ts',
+    'vendor': './app/vendor.ts'
   },
   output: {
     path: "./dist",

@@ -1,14 +1,14 @@
 import {Component} from 'angular2/core';
 import {Router, Route, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {Home} from './components/home/home';
-import {About} from './components/about/about';
-import {RepoBrowser} from './components/repo-browser/repo-browser';
+import {Home} from './home/home.component';
+import {About} from './about/about.component';
+import {RepoBrowser} from './repo-browser/repo-browser.component';
 
 @Component({
   selector: 'seed-app',
   providers: [],
-  templateUrl: 'app/seed-app.html',
+  templateUrl: 'seed-app.html',
   directives: [ROUTER_DIRECTIVES],
   pipes: []
 })

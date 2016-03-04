@@ -4,8 +4,8 @@ import {Http} from 'angular2/http';
 
 @Component({
   selector: 'about',
-  templateUrl: 'app/components/about/about.html',
-  styleUrls: ['app/components/about/about.css'],
+  templateUrl: 'about/about.html',
+  styleUrls: ['about/about.css'],
   providers: [],
   directives: [],
   pipes: []
@@ -13,6 +13,6 @@ import {Http} from 'angular2/http';
 export class About {
 
   constructor(http:Http) {
-    
+
   }
 }
