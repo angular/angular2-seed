@@ -1,3 +1,5 @@
+// import 'ie-shim';
+import 'es6-shim';
 import 'angular2/bundles/angular2-polyfills';
 
 import 'angular2/platform/browser';
