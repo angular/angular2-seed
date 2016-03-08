@@ -3,29 +3,41 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    'app': './src/app.ts',
+    'app':    './src/app.ts',
     'vendor': './src/vendor.ts'
   },
-  output: {
-    path: "./dist",
-    filename: "bundle.js"
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
-  ],
 
-  resolve: {
-    extensions: ['', '.ts', '.js']
+  output: {
+    path:     './dist',
+    filename: '[name].bundle.js'
   },
+
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', '[name].bundle.js'),
+  ],
 
   module: {
     loaders: [
-      { test: /\.ts$/, loader: 'ts-loader' },
+      // .ts files for TypeScript
+      { test: /\.ts$/, loader: 'ts-loader', exclude: /node_modules/ },
+
     ],
-    noParse: [ path.join(__dirname, 'node_modules', 'angular2', 'bundles') ]
+    noParse: noParseDirectories()
+  },
+
+  resolve: {
+    extensions: ['', '.ts', '.js']
   },
 
   devServer: {
     historyApiFallback: true
   }
 };
+
+
+
+function noParseDirectories() {
+  return [
+    path.join(__dirname, 'node_modules', 'angular2', 'bundles')
+  ];
+}
