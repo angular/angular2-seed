@@ -22,6 +22,7 @@
   "devDependencies": {
     "ts-loader": "^0.7.2",
     "typescript": "^1.7.3",
+    "typings": "^0.7.4",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
