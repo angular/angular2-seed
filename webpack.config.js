@@ -22,7 +22,7 @@ module.exports = {
     ],
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'ts-loader', exclude: /node_modules/ },
+      { test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: /node_modules/ },
 
     ],
     noParse: noParseDirectories()
