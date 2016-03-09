@@ -3,8 +3,9 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    'app':    './src/app.ts',
-    'vendor': './src/vendor.ts'
+    'polyfills': './src/polyfills.ts',
+    'vendor':    './src/vendor.ts',
+    'app':       './src/app.ts',
   },
 
   output: {
@@ -13,7 +14,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', '[name].bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
   ],
 
   module: {

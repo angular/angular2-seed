@@ -1,14 +1,14 @@
-// import 'ie-shim';
-import 'es6-shim';
-import 'angular2/bundles/angular2-polyfills';
+// Vendors
 
+// Angular 2
 import 'angular2/platform/browser';
 import 'angular2/core';
 import 'angular2/http';
 import 'angular2/router';
 
-// Vendors
-import 'rxjs/Rx';
+
+// RxJS 5
+// import 'rxjs/Rx';
 
 
 // For vendors for example jQuery, Lodash, angular2-jwt import them here
