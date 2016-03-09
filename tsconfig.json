@@ -5,7 +5,7 @@
     "noImplicitAny": false,
     "outDir": "dist",
     "rootDir": ".",
-    "sourceMap": false,
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node"
