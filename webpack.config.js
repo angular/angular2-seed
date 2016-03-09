@@ -17,6 +17,9 @@ module.exports = {
   ],
 
   module: {
+    preLoaders: [
+      { test: /\.js$/, loader: 'source-map-loader', exclude: /node_modules(\/|\\)rxjs/ }
+    ],
     loaders: [
       // .ts files for TypeScript
       { test: /\.ts$/, loader: 'ts-loader', exclude: /node_modules/ },
