@@ -12,4 +12,8 @@ export class Home {
 
   constructor() {}
 
+  ngOnInit() {
+
+  }
+
 }

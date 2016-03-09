@@ -13,7 +13,9 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 })
 export class RepoList {
   repos: Observable<any>
-  constructor(github: Github, params:RouteParams) {
-    this.repos = github.getReposForOrg(params.get('org'));
+  constructor(public github: Github, public params: RouteParams) {}
+
+  ngOnInit() {
+    this.repos = this.github.getReposForOrg(this.params.get('org'));
   }
 }

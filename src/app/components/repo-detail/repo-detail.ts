@@ -13,11 +13,14 @@ import {Github} from '../../services/github';
 })
 export class RepoDetail {
   repoDetails = {};
-  constructor(routeParams:RouteParams, github: Github) {
-    github.getRepoForOrg(routeParams.get('org'),routeParams.get('name'))
+  constructor(public routeParams:RouteParams, public github: Github) {}
+
+  ngOnInit() {
+    this.github.getRepoForOrg(this.routeParams.get('org'), this.routeParams.get('name'))
       .subscribe(repoDetails => {
         this.repoDetails = repoDetails;
       });
+
   }
 
 }
