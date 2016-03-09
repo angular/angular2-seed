@@ -25,7 +25,7 @@ var webpackConfig = {
     ],
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: /node_modules/ },
+      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
 
     ],
   }
