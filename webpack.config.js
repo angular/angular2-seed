@@ -41,6 +41,7 @@ module.exports = {
 
 function noParseDirectories() {
   return [
+    path.join(__dirname, 'node_modules', 'zone.js', 'dist'),
     path.join(__dirname, 'node_modules', 'angular2', 'bundles')
   ];
 }
