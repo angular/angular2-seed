@@ -8,7 +8,7 @@ import {Github} from '../../services/github';
   templateUrl: 'app/components/repo-detail/repo-detail.html',
   styleUrls: ['app/components/repo-detail/repo-detail.css'],
   providers: [],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ ROUTER_DIRECTIVES ],
   pipes: []
 })
 export class RepoDetail {

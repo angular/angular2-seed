@@ -8,7 +8,7 @@ import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
   templateUrl: 'app/components/repo-list/repo-list.html',
   styleUrls: ['app/components/repo-list/repo-list.css'],
   providers: [],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ ROUTER_DIRECTIVES ],
   pipes: []
 })
 export class RepoList {
