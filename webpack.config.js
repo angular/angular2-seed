@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-var webpackMerge = require('webpack-merge');
 var path = require('path');
 
 
@@ -20,17 +19,17 @@ var webpackConfig = {
   ],
 
   module: {
-    preLoaders: [
-      { test: /\.js$/, loader: 'source-map-loader', exclude: /node_modules(\/|\\)rxjs/ }
-    ],
     loaders: [
       // .ts files for TypeScript
       { test: /\.ts$/, loader: 'awesome-typescript-loader' },
 
-    ],
+    ]
   }
 
 };
+
+
+
 
 
 
@@ -75,7 +74,6 @@ var defaultConfig = {
 
   node: {
     global: 1,
-    process: 1,
     crypto: 'empty',
     module: 0,
     Buffer: 0,
@@ -84,5 +82,5 @@ var defaultConfig = {
   },
 }
 
-
+var webpackMerge = require('webpack-merge');
 module.exports = webpackMerge(defaultConfig, webpackConfig);
