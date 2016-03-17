@@ -1,13 +1,13 @@
 var webpack = require('webpack');
+var webpackMerge = require('webpack-merge');
 var path = require('path');
-
 
 // Webpack Config
 var webpackConfig = {
   entry: {
     'polyfills': './src/polyfills.ts',
-    'vendor':    './src/vendor.ts',
-    'app':       './src/app.ts',
+    'vendor': './src/vendor.ts',
+    'app': './src/app.ts',
   },
 
   output: {
@@ -15,34 +15,24 @@ var webpackConfig = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['app', 'vendor', 'polyfills'],
+      minChunks: Infinity
+    }),
   ],
 
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader'
+      },
 
     ]
   }
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Our Webpack Defaults
 var defaultConfig = {
@@ -63,13 +53,16 @@ var defaultConfig = {
   },
 
   resolve: {
-    root: [ path.join(__dirname, 'src') ],
+    root: [path.join(__dirname, 'src')],
     extensions: ['', '.ts', '.js']
   },
 
   devServer: {
     historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
+    watchOptions: {
+      aggregateTimeout: 0,
+      poll: 1000
+    }
   },
 
   node: {
@@ -82,5 +75,4 @@ var defaultConfig = {
   },
 }
 
-var webpackMerge = require('webpack-merge');
 module.exports = webpackMerge(defaultConfig, webpackConfig);
