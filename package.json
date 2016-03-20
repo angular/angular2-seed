@@ -5,7 +5,7 @@
   "scripts": {
     "typings-install": "./node_modules/.bin/typings install",
     "postinstall": "npm run typings-install",
-    "build": "webpack --inline --colors --progress --display-error-details --display-cached",
+    "build": "./node_modules/.bin/webpack --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
     "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src"
   },
