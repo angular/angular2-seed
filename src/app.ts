@@ -5,7 +5,6 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 
 import {SeedApp} from './app/seed-app';
 
-
 bootstrap(SeedApp, [
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
