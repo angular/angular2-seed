@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
-    "typings-install": "./node_modules/.bin/typings install",
+    "typings-install": "node_modules/typings/dist/bin.js install",
     "postinstall": "npm run typings-install",
-    "build": "./node_modules/.bin/webpack --inline --colors --progress --display-error-details --display-cached",
+    "build": "node_modules/webpack/bin/webpack.js --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
-    "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src"
+    "server": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "start": "npm run server"
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
