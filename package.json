@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
-    "typings-install": "node_modules/typings/dist/bin.js install",
+    "typings-install": "node node_modules/typings/dist/bin.js install",
     "postinstall": "npm run typings-install",
-    "build": "node_modules/webpack/bin/webpack.js --inline --colors --progress --display-error-details --display-cached",
+    "build": "node node_modules/webpack/bin/webpack.js --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
-    "server": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "server": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
     "start": "npm run server"
   },
   "contributors": [
