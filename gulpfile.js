@@ -42,7 +42,7 @@ gulp.task('clean', function(cb){
 
 //compile app typescript files
 gulp.task('compile:app', function(){
-  return gulp.src('src/**/*.ts')
+  return gulp.src(['src/**/*.ts', 'typings/browser/**/*.d.ts'])
     .pipe(ts(tsProject))
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
