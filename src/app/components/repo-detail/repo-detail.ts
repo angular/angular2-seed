@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
-import {Http} from 'angular2/http';
+import {Component} from '@angular/core';
+import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Http} from '@angular/http';
 import {Github} from '../../services/github';
 
 @Component({
@@ -13,7 +13,7 @@ import {Github} from '../../services/github';
 })
 export class RepoDetail {
   repoDetails = {};
-  constructor(public routeParams:RouteParams, public github: Github) {}
+  constructor(public routeParams: RouteParams, public github: Github) {}
 
   ngOnInit() {
     this.github.getRepoForOrg(this.routeParams.get('org'), this.routeParams.get('name'))
