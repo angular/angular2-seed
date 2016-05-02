@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
 // Webpack Config
@@ -15,6 +16,14 @@ var webpackConfig = {
   },
 
   plugins: [
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://localhost:3100'
+    },
+    {
+      reload: false
+    }),
     new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
   ],
 
