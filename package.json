@@ -4,7 +4,9 @@
   "description": "A simple starter Angular2 project",
   "main": "index.js",
   "scripts": {
-    "start": "gulp clean && gulp"
+    "start": "gulp clean && gulp",
+    "postinstall": "typings install",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
