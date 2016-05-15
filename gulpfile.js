@@ -14,6 +14,7 @@ var tsProject = ts.createProject(tsConfig.compilerOptions);
 //copy dependencies to dist folder
 gulp.task('copy:deps', function(){
   return gulp.src([
+    'node_modules/es6-shim/es6-shim.js',
     'node_modules/angular2/bundles/angular2-polyfills.js',
     'node_modules/angular2/bundles/angular2.dev.js',
     'node_modules/angular2/bundles/http.js',
