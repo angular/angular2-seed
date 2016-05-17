@@ -3,7 +3,6 @@
     "module": "commonjs",
     "target": "es5",
     "noImplicitAny": false,
-    "outDir": "dist",
     "rootDir": ".",
     "sourceMap": false,
     "emitDecoratorMetadata": true,
