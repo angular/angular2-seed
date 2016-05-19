@@ -29,21 +29,6 @@ var webpackConfig = {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Our Webpack Defaults
 var defaultConfig = {
   devtool: 'cheap-module-source-map',
