@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {RouteSegment, ROUTER_DIRECTIVES} from '@angular/router';
 import {Http} from '@angular/http';
 import {Github} from '../../services/github';
 
@@ -13,10 +13,10 @@ import {Github} from '../../services/github';
 })
 export class RepoDetail {
   repoDetails = {};
-  constructor(public routeParams: RouteParams, public github: Github) {}
+  constructor(public routeSegment: RouteSegment, public github: Github) {}
 
   ngOnInit() {
-    this.github.getRepoForOrg(this.routeParams.get('org'), this.routeParams.get('name'))
+    this.github.getRepoForOrg(this.routeSegment.getParam('org'), this.routeSegment.getParam('name'))
       .subscribe(repoDetails => {
         this.repoDetails = repoDetails;
       });

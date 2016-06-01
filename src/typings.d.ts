@@ -46,10 +46,6 @@ declare module 'angular2/testing' {
   export * from '@angular/core/testing';
 }
 
-declare module 'angular2/router' {
-  export * from '@angular/router-deprecated';
-}
-
 declare module 'angular2/http/testing' {
   export * from '@angular/http/testing';
 }
