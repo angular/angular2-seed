@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Github} from '../../services/github';
 import {Observable} from 'rxjs/Observable';
-import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {RouteSegment, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   selector: 'repo-list',
@@ -13,9 +13,9 @@ import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 })
 export class RepoList {
   repos: Observable<any>;
-  constructor(public github: Github, public params: RouteParams) {}
+  constructor(public github: Github, public params: RouteSegment) {}
 
   ngOnInit() {
-    this.repos = this.github.getReposForOrg(this.params.get('org'));
+    this.repos = this.github.getReposForOrg(this.params.getParam('org'));
   }
 }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Router, Routes, ROUTER_DIRECTIVES} from '@angular/router';
 
 import {RepoList} from '../repo-list/repo-list';
 import {RepoDetail} from '../repo-detail/repo-detail';
@@ -13,9 +13,9 @@ import {Github} from '../../services/github';
   directives: [ ROUTER_DIRECTIVES ],
   pipes: []
 })
-@RouteConfig([
-  {path: '/:org',       component: RepoList,   name: 'RepoList'},
-  {path: '/:org/:name', component: RepoDetail, name: 'RepoDetail' },
+@Routes([
+  { path: '/:org',       component: RepoList,  },
+  { path: '/:org/:name', component: RepoDetail },
 ])
 export class RepoBrowser {
 
@@ -25,7 +25,7 @@ export class RepoBrowser {
     this.github.getOrg(orgName)
       .subscribe(({name}) => {
         console.log(name);
-        this.router.navigate(['RepoList', {org: orgName}]);
+        this.router.navigate(['/github', orgName]);
       });
   }
 
