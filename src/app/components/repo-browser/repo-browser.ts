@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
-
 import { RepoList } from '../repo-list/repo-list';
-import { RepoDetail } from '../repo-detail/repo-detail';
 import { Github } from '../../services/github';
 
 @Component({
@@ -14,8 +12,7 @@ import { Github } from '../../services/github';
   styleUrls: ['./repo-browser.css']
 })
 @Routes([
-  { path: '/:org',       component: RepoList,  },
-  { path: '/:org/:name', component: RepoDetail },
+  { path: '/:org', component: RepoList }
 ])
 export class RepoBrowser {
 
