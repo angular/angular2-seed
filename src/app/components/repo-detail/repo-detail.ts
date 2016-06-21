@@ -5,11 +5,11 @@ import {Github} from '../../services/github';
 
 @Component({
   selector: 'repo-detail',
-  templateUrl: 'app/components/repo-detail/repo-detail.html',
-  styleUrls: ['app/components/repo-detail/repo-detail.css'],
+  pipes: [],
   providers: [],
   directives: [ ROUTER_DIRECTIVES ],
-  pipes: []
+  styleUrls: ['./repo-detail.css'],
+  templateUrl: './repo-detail.html'
 })
 export class RepoDetail {
   repoDetails = {};

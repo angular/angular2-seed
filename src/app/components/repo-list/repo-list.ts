@@ -5,11 +5,11 @@ import {RouteSegment, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   selector: 'repo-list',
-  templateUrl: 'app/components/repo-list/repo-list.html',
-  styleUrls: ['app/components/repo-list/repo-list.css'],
+  pipes: [],
   providers: [],
   directives: [ ROUTER_DIRECTIVES ],
-  pipes: []
+  styleUrls: ['./repo-list.css'],
+  templateUrl: './repo-list.html',
 })
 export class RepoList {
   repos: Observable<any>;

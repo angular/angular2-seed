@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'home',
-  templateUrl: 'app/components/home/home.html',
-  styleUrls: ['app/components/home/home.css'],
+  pipes: [],
   providers: [],
   directives: [],
-  pipes: []
+  styleUrls: ['./home.css'],
+  templateUrl: './home.html'
 })
 export class Home {
 

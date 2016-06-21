@@ -4,11 +4,11 @@ import {Http} from '@angular/http';
 
 @Component({
   selector: 'about',
-  templateUrl: 'app/components/about/about.html',
-  styleUrls: ['app/components/about/about.css'],
+  pipes: [],
   providers: [],
   directives: [],
-  pipes: []
+  styleUrls: ['./about.css'],
+  templateUrl: './about.html'
 })
 export class About {
 
