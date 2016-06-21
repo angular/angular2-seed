@@ -15,13 +15,17 @@ var webpackConfig = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({ name: ['app', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new webpack.optimize.OccurenceOrderPlugin(true),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
   ],
 
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'] },
+      { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.json$/, loader: 'json-loader' },
 
     ]
   }
@@ -61,7 +65,7 @@ var defaultConfig = {
 
   resolve: {
     root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js'],
+    extensions: ['', '.ts', '.js', '.json'],
     alias: {
       'angular2/testing': path.join(__dirname, 'node_modules', '@angular', 'core', 'testing.js'),
       '@angular/testing': path.join(__dirname, 'node_modules', '@angular', 'core', 'testing.js'),
