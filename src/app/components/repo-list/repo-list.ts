@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {Github} from '../../services/github';
 import {Observable} from 'rxjs/Observable';
-import {Routes, RouteSegment, ROUTER_DIRECTIVES} from '@angular/router';
-import {RepoDetail} from '../repo-detail/repo-detail';
+import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'repo-list',
@@ -12,18 +11,19 @@ import {RepoDetail} from '../repo-detail/repo-detail';
   styleUrls: ['./repo-list.css'],
   templateUrl: './repo-list.html',
 })
-@Routes([
-  { path: '/:name', component: RepoDetail },
-])
 export class RepoList {
-  private org: string;
+  org: string;
   repos: Observable<any>;
 
-  constructor(public github: Github, public params: RouteSegment) {
-    this.org = this.params.getParam('org');
+  constructor(public github: Github, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.repos = this.github.getReposForOrg(this.org);
+    this.route.params.subscribe(params => {
+      this.org = params['org'];
+      if (this.org) {
+        this.repos = this.github.getReposForOrg(this.org);
+      }
+    });
   }
 }
