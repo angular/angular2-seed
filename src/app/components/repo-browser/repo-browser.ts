@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
-import { RepoList } from '../repo-list/repo-list';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { Github } from '../../services/github';
 
 @Component({
@@ -11,9 +10,6 @@ import { Github } from '../../services/github';
   templateUrl: './repo-browser.html',
   styleUrls: ['./repo-browser.css']
 })
-@Routes([
-  { path: '/:org', component: RepoList }
-])
 export class RepoBrowser {
 
   constructor(private router: Router, private github: Github) {}

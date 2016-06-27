@@ -1,29 +1,34 @@
-import {Component, Injector} from '@angular/core';
-import {RouteSegment, ROUTER_DIRECTIVES} from '@angular/router';
+import {Component} from '@angular/core';
+import {ROUTER_DIRECTIVES, ActivatedRoute, Router} from '@angular/router';
 import {Github} from '../../services/github';
-import {RepoList} from '../repo-list/repo-list';
 
 @Component({
   selector: 'repo-detail',
   pipes: [],
   providers: [],
-  directives: [ ROUTER_DIRECTIVES ],
+  directives: [ROUTER_DIRECTIVES],
   styleUrls: ['./repo-detail.css'],
   templateUrl: './repo-detail.html'
 })
 export class RepoDetail {
-  private org: string;
-  public repoDetails: any = {};
+  private org:string;
+  private repo:string;
+  public repoDetails:any = {};
 
-  constructor(public routeSegment: RouteSegment, public github: Github, private injector: Injector) {
-    let parentComponent = this.injector.get(RepoList);
-    this.org = parentComponent.org;
+  constructor(public github:Github, private router:Router, private route:ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.github.getRepoForOrg(this.org, this.routeSegment.getParam('name'))
-      .subscribe(repoDetails => {
-        this.repoDetails = repoDetails;
-      });
+    this.route.params.subscribe(params => {
+      this.org = this.router.routerState.parent(this.route).snapshot.params['org'];
+      this.repo = params['repo'] || '';
+
+      if (this.repo) {
+        this.github.getRepoForOrg(this.org, this.repo)
+          .subscribe(repoDetails => {
+            this.repoDetails = repoDetails;
+          });
+      }
+    });
   }
 }
