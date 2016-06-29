@@ -7,8 +7,8 @@ import {Http} from '@angular/http';
   pipes: [],
   providers: [],
   directives: [],
-  styleUrls: ['./about.css'],
-  templateUrl: './about.html'
+  template: require('./about.html'),
+  styles: [require('./about.css')]
 })
 export class About {
 

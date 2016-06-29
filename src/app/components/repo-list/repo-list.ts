@@ -8,8 +8,8 @@ import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
   pipes: [],
   providers: [],
   directives: [ ROUTER_DIRECTIVES ],
-  styleUrls: ['./repo-list.css'],
-  templateUrl: './repo-list.html',
+  template: require('./repo-list.html'),
+  styles: [require('./repo-list.css')]
 })
 export class RepoList {
   org: string;

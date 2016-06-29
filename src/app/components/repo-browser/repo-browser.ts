@@ -7,8 +7,8 @@ import { Github } from '../../services/github';
   pipes: [],
   providers: [ Github ],
   directives: [ ROUTER_DIRECTIVES ],
-  templateUrl: './repo-browser.html',
-  styleUrls: ['./repo-browser.css']
+  template: require('./repo-browser.html'),
+  styles: [require('./repo-browser.css')]
 })
 export class RepoBrowser {
 
