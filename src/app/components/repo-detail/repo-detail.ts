@@ -7,8 +7,8 @@ import {Github} from '../../services/github';
   pipes: [],
   providers: [],
   directives: [ROUTER_DIRECTIVES],
-  styleUrls: ['./repo-detail.css'],
-  templateUrl: './repo-detail.html'
+  template: require('./repo-detail.html'),
+  styles: [require('./repo-detail.css')]
 })
 export class RepoDetail {
   private org:string;
