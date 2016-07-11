@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import {Http} from '@angular/http';
-
 
 @Component({
   selector: 'about',
@@ -11,12 +9,4 @@ import {Http} from '@angular/http';
   templateUrl: './about.html'
 })
 export class About {
-
-  constructor(http: Http) {
-
-  }
-
-  ngOnInit() {
-
-  }
 }
