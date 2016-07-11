@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Github} from '../../services/github';
 import {Observable} from 'rxjs/Observable';
 import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
@@ -11,7 +11,7 @@ import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
   styleUrls: ['./repo-list.css'],
   templateUrl: './repo-list.html',
 })
-export class RepoList {
+export class RepoList implements OnInit {
   org: string;
   repos: Observable<any>;
 
