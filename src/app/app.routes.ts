@@ -1,10 +1,10 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import {About} from './components/about/about';
-import {Home} from './components/home/home';
-import {RepoBrowser} from './components/repo-browser/repo-browser';
-import {RepoList} from './components/repo-list/repo-list';
-import {RepoDetail} from './components/repo-detail/repo-detail';
+import {About} from './about/about';
+import {Home} from './home/home';
+import {RepoBrowser} from './github/repo-browser/repo-browser';
+import {RepoList} from './github/repo-list/repo-list';
+import {RepoDetail} from './github/repo-detail/repo-detail';
 
 const routes: RouterConfig = [
   { path: '', redirectTo: 'home', terminal: true },

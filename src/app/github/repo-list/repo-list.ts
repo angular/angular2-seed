@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Github} from '../../services/github';
+import {Github} from '../shared/github';
 import {Observable} from 'rxjs/Observable';
 import {ROUTER_DIRECTIVES, ActivatedRoute} from '@angular/router';
 
