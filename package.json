@@ -19,7 +19,6 @@
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^1.1.1",
     "css-loader": "^0.23.1",
-    "json-loader": "^0.5.4",
     "raw-loader": "^0.5.1",
     "to-string-loader": "^1.1.4",
     "typescript": "~1.8.9",
