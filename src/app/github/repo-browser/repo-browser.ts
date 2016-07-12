@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { Github } from '../../services/github';
+import { Github } from '../shared/github';
 
 @Component({
   selector: 'repo-browser',
