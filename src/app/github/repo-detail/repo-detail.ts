@@ -1,12 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES, ActivatedRoute, Router} from '@angular/router';
-import {Github} from '../shared/github';
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Github} from "../shared/github";
 
 @Component({
   selector: 'repo-detail',
-  pipes: [],
-  providers: [],
-  directives: [ROUTER_DIRECTIVES],
   styleUrls: ['./repo-detail.css'],
   templateUrl: './repo-detail.html'
 })
