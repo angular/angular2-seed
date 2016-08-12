@@ -1,6 +1,6 @@
-import {Component} from "@angular/core";
-import {Router} from "@angular/router";
-import {Github} from "../shared/github";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Github } from '../shared/github';
 
 @Component({
   selector: 'repo-browser',

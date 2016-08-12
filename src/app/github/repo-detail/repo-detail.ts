@@ -1,6 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute, Router} from "@angular/router";
-import {Github} from "../shared/github";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Github} from '../shared/github';
 
 @Component({
   selector: 'repo-detail',

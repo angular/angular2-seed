@@ -1,7 +1,7 @@
-import {Component, OnInit} from "@angular/core";
-import {Github} from "../shared/github";
-import {Observable} from "rxjs/Observable";
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {Github} from '../shared/github';
+import {Observable} from 'rxjs/Observable';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'repo-list',
