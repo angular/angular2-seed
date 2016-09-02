@@ -6,7 +6,7 @@ import {RepoList} from './github/repo-list/repo-list';
 import {RepoDetail} from './github/repo-detail/repo-detail';
 
 export const rootRouterConfig: Routes = [
-  {path: '', redirectTo: 'home', terminal: true},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: Home},
   {path: 'about', component: About},
   {path: 'github', component: RepoBrowser,
