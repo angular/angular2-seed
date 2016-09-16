@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
-    "typings-install": "typings install",
-    "postinstall": "npm run typings-install",
     "build": "webpack --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
@@ -16,13 +14,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/core-js": "^0.9.32",
+    "@types/node": "^6.0.38",
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^1.1.1",
     "css-loader": "^0.23.1",
     "raw-loader": "^0.5.1",
     "to-string-loader": "^1.1.4",
     "typescript": "^2.0.2",
-    "typings": "~1.0.3",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
     "webpack-merge": "^0.8.4"
@@ -40,6 +39,7 @@
     "@angular/upgrade": "2.0.0",
     "core-js": "^2.4.1",
     "ie-shim": "^0.1.0",
+    "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "~0.6.23",
     "angular2-in-memory-web-api": "0.0.20",
