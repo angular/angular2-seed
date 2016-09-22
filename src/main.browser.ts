@@ -1,5 +1,8 @@
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {AppModule} from './app/app.module';
+import 'reflect-metadata';
+import 'zone.js';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+import {platformBrowser} from '@angular/platform-browser';
+
+import {AppModuleNgFactory} from './app/app.module.ngfactory';
+
+platformBrowser().bootstrapModuleFactory(AppModuleNgFactory).catch(err => console.error(err));

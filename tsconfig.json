@@ -2,8 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "outDir": "dist",
-    "rootDir": ".",
+    "outDir": "build",
+    "declaration": true,
+    "rootDir": "src",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,6 +17,10 @@
   "exclude": [
     "node_modules"
   ],
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "trace": true
+  },
   "awesomeTypescriptLoaderOptions": {
     "useWebpackText": true
   },

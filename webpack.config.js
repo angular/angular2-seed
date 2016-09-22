@@ -5,18 +5,30 @@ var path = require('path');
 // Webpack Config
 var webpackConfig = {
   entry: {
-    'polyfills': './src/polyfills.browser.ts',
-    'vendor':    './src/vendor.browser.ts',
-    'main':       './src/main.browser.ts',
+    'main': 'main.browser',
   },
 
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
+    // new webpack.optimize.OccurenceOrderPlugin(true),
+    // new webpack.optimize.CommonsChunkPlugin({ name: ['main'], minChunks: Infinity }),
+    // new webpack.optimize.UglifyJsPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      },
+      sourceMap: true
+    }),
   ],
 
   module: {
@@ -30,12 +42,12 @@ var webpackConfig = {
 
 };
 
-
 // Our Webpack Defaults
 var defaultConfig = {
-  devtool: 'cheap-module-source-map',
+  // devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   cache: true,
-  debug: true,
+  // debug: true,
   output: {
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map',
@@ -43,23 +55,19 @@ var defaultConfig = {
   },
 
   resolve: {
-    root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js']
+    modules: [
+      path.resolve('./build'),
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ],
+    // root: [  ],
+    extensions: ['.ts', '.js']
   },
 
   devServer: {
     historyApiFallback: true,
     watchOptions: { aggregateTimeout: 300, poll: 1000 }
   },
-
-  node: {
-    global: 1,
-    crypto: 'empty',
-    module: 0,
-    Buffer: 0,
-    clearImmediate: 0,
-    setImmediate: 0
-  }
 };
 
 var webpackMerge = require('webpack-merge');
