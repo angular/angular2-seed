@@ -1,0 +1,11 @@
+@import "./styles/_variables";
+
+a {
+  &:hover {
+    color: $nglogo-red-light-color;
+  }
+}
+
+h3 {
+  color: $nglogo-red-light-color;
+}
