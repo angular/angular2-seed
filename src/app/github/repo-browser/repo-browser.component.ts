@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Github } from '../shared/github';
+import { GithubService } from '../shared/github.service';
 
 @Component({
   selector: 'repo-browser',
-  templateUrl: './repo-browser.html',
-  styleUrls: ['./repo-browser.css']
+  templateUrl: './repo-browser.component.html',
+  styleUrls: ['./repo-browser.component.css']
 })
-export class RepoBrowser {
+export class RepoBrowserComponent {
 
-  constructor(private router: Router, private github: Github) {
+  constructor(private router: Router, private github: GithubService) {
   }
 
   searchForOrg(orgName: string) {
