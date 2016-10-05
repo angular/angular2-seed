@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {Github} from '../shared/github';
+import {GithubService} from '../shared/github.service';
 import {Observable} from 'rxjs/Observable';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'repo-list',
-  styleUrls: ['./repo-list.css'],
-  templateUrl: './repo-list.html',
+  styleUrls: ['./repo-list.component.css'],
+  templateUrl: './repo-list.component.html',
 })
-export class RepoList implements OnInit {
+export class RepoListComponent implements OnInit {
   org: string;
   repos: Observable<any>;
 
-  constructor(public github: Github, private route: ActivatedRoute) {
+  constructor(public github: GithubService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {

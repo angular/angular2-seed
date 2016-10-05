@@ -1,21 +1,21 @@
 import {Routes} from '@angular/router';
-import {About} from './about/about';
-import {Home} from './home/home';
-import {RepoBrowser} from './github/repo-browser/repo-browser';
-import {RepoList} from './github/repo-list/repo-list';
-import {RepoDetail} from './github/repo-detail/repo-detail';
+import {AboutComponent} from './about/about.component';
+import {HomeComponent} from './home/home.component';
+import {RepoBrowserComponent} from './github/repo-browser/repo-browser.component';
+import {RepoListComponent} from './github/repo-list/repo-list.component';
+import {RepoDetailComponent} from './github/repo-detail/repo-detail.component';
 
 export const rootRouterConfig: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: Home},
-  {path: 'about', component: About},
-  {path: 'github', component: RepoBrowser,
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'github', component: RepoBrowserComponent,
     children: [
-      {path: '', component: RepoList},
-      {path: ':org', component: RepoList,
+      {path: '', component: RepoListComponent},
+      {path: ':org', component: RepoListComponent,
         children: [
-          {path: '', component: RepoDetail},
-          {path: ':repo', component: RepoDetail}
+          {path: '', component: RepoDetailComponent},
+          {path: ':repo', component: RepoDetailComponent}
         ]
       }]
   }
