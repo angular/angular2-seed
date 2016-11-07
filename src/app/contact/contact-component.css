@@ -1,0 +1,14 @@
+.form-content {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-content .sd-form-control {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+}
+.form-content textarea.sd-form-control {
+  max-width: 100%;
+}
