@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-
+var webpackMerge = require('webpack-merge');
 
 // Webpack Config
 var webpackConfig = {
@@ -9,18 +9,32 @@ var webpackConfig = {
   },
 
   output: {
-    path: './dist',
+    publicPath: '',
+    path: path.resolve(__dirname, './dist'),
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+      path.resolve(__dirname, './src'),
+      {
+        // your Angular Async Route paths relative to this root directory
+      }
+    ),
   ],
 
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'] },
+      {
+        test: /\.ts$/,
+        loaders: [
+          'awesome-typescript-loader',
+          'angular2-template-loader',
+          'angular2-router-loader'
+        ]
+      },
       { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
       { test: /\.html$/, loader: 'raw-loader' }
     ]
@@ -31,9 +45,8 @@ var webpackConfig = {
 
 // Our Webpack Defaults
 var defaultConfig = {
-  devtool: 'cheap-module-source-map',
-  cache: true,
-  debug: true,
+  devtool: 'source-map',
+
   output: {
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map',
@@ -41,8 +54,8 @@ var defaultConfig = {
   },
 
   resolve: {
-    root: [ path.join(__dirname, 'src') ],
-    extensions: ['', '.ts', '.js']
+    extensions: [ '.ts', '.js' ],
+    modules: [ path.resolve(__dirname, 'node_modules') ]
   },
 
   devServer: {
@@ -51,14 +64,16 @@ var defaultConfig = {
   },
 
   node: {
-    global: 1,
+    global: true,
     crypto: 'empty',
-    module: 0,
-    Buffer: 0,
-    clearImmediate: 0,
-    setImmediate: 0
+    __dirname: true,
+    __filename: true,
+    process: true,
+    Buffer: false,
+    clearImmediate: false,
+    setImmediate: false
   }
 };
 
-var webpackMerge = require('webpack-merge');
+
 module.exports = webpackMerge(defaultConfig, webpackConfig);
