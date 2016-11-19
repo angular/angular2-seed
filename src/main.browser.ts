@@ -4,8 +4,8 @@ import {AppModule} from './app/app.module';
 export const platformRef = platformBrowserDynamic();
 
 export function main() {
-  reutrn platformRef.bootstrapModule(AppModule)
-  .catch(err => console.error(err));  
+  return platformRef.bootstrapModule(AppModule)
+    .catch(err => console.error(err));
 }
 
 // support async tag or hmr
