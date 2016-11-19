@@ -1,5 +1,7 @@
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {AppModule} from './app/app.module';
+import './polyfills.browser';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
 export const platformRef = platformBrowserDynamic();
 
@@ -9,9 +11,12 @@ export function main() {
 }
 
 // support async tag or hmr
-if (document.readyState === 'complete') {
-  main()
-} else {
-  document.addEventListener('DOMContentLoaded', () => main());
+switch (document.readyState) {
+  case 'interactive':
+  case 'complete':
+    main();
+    break;
+  case 'loading':
+  default:
+    document.addEventListener('DOMContentLoaded', () => main());
 }
-
