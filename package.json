@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",
-    "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
+    "server": "webpack-dev-server --inline --progress --cors --port 3000 --content-base src",
     "start": "npm run server"
   },
   "contributors": [
