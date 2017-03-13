@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { GithubService } from '../shared/github.service';
+import { GithubService } from '../../../services/github';
 
 @Component({
   selector: 'repo-browser',
-  templateUrl: './repo-browser.component.html',
-  styleUrls: ['./repo-browser.component.css']
+  templateUrl: './template.html',
+  styleUrls: ['./styles.css']
 })
 export class RepoBrowserComponent {
 

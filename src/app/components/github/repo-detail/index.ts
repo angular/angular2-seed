@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {GithubService} from '../shared/github.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GithubService } from '../../../services/github';
 
 @Component({
   selector: 'repo-detail',
-  styleUrls: ['./repo-detail.component.css'],
-  templateUrl: './repo-detail.component.html'
+  styleUrls: ['./styles.css'],
+  templateUrl: './template.html'
 })
 export class RepoDetailComponent implements OnInit {
   private org:string;
