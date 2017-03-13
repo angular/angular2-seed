@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {GithubService} from '../shared/github.service';
-import {Observable} from 'rxjs/Observable';
-import {ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { GithubService } from '../../../services/github';
 
 @Component({
   selector: 'repo-list',
-  styleUrls: ['./repo-list.component.css'],
-  templateUrl: './repo-list.component.html',
+  styleUrls: ['./styles.css'],
+  templateUrl: './template.html',
 })
 export class RepoListComponent implements OnInit {
   org: string;
