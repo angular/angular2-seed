@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
-    "build": "webpack --progress",
+    "build": "webpack --config config/webpack.prod.js --progress",
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
     "start": "npm run server"
@@ -37,11 +37,11 @@
     "@types/node": "^6.0.48",
     "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "^0.6.0",
-    "awesome-typescript-loader": "^2.2.4",
+    "awesome-typescript-loader": "^3.1.2",
     "css-loader": "^0.25.0",
     "raw-loader": "^0.5.1",
     "to-string-loader": "^1.1.4",
-    "typescript": "~2.0.10",
+    "typescript": "2.2.1",
     "webpack": "2.1.0-beta.27",
     "webpack-dev-server": "2.1.0-beta.11",
     "webpack-merge": "^0.15.0"
