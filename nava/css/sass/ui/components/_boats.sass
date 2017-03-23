@@ -1,0 +1,142 @@
+.boat-box
+   display: block
+   overflow: hidden
+   margin:
+      bottom: 30px
+   position: relative
+   border-radius: 5px
+   z-index: 2
+
+   .box-cover
+      line-height: 1em
+      font-size: 0
+
+   img
+      backface-visibility: hidden
+      +transition (all 200ms ease-in-out)
+      +transform (scale(1.045))
+      width: 100%
+
+   .boat-price
+      pointer-events: none
+      position: absolute
+      border-radius: 5px
+      background: $red-1
+      color: $white
+      height: 40px
+      line-height: 40px
+      padding: 0 10px
+      display: inline-block
+      font-size: 16px
+      letter-spacing: .04em
+      font-weight: 700
+      left: 30px
+      top: 30px
+
+      &::before
+         content: "\e902"
+         font-family: icomoon
+         display: inline-block
+         margin:
+            right: 10px
+         font-weight: 500
+
+   .box-details
+      pointer-events: none
+      position: absolute
+      bottom: 0
+      right: 0
+      left: 0
+      padding: 30px
+
+      &::before
+         content: ""
+         +transition (all 200ms ease-in-out)
+         +transform (translate(0, 50%))
+         visibility: hidden
+         opacity: 0
+         position: absolute
+         z-index: 1
+         bottom: 0
+         right: 0
+         left: 0
+         top: -15px
+         opacity: .65
+         background: linear-gradient(to bottom, transparent, #000)
+
+   .box-meta
+      +transition (all 250ms ease-in-out)
+      +transform (translate(0, 50%))
+      visibility: hidden
+      position: relative
+      opacity: 0
+      z-index: 2
+
+      .boat-name,
+      .boat-meta
+         font-family: $Raleway
+         letter-spacing: .04em
+         font-weight: 500
+         line-height: 1em
+         color: $white
+         margin: 0
+
+      .boat-name
+         font-size: 30px
+         margin: 0 0 10px
+
+      .boat-meta
+         font-size: 16px
+
+         li
+            display: inline-block
+
+            &::before
+               font-family: icomoon
+               display: inline-block
+               font-size: 14px
+               margin:
+                  right: 7.5px
+
+            &.location
+               &::before
+                  content: "\e947"
+
+            &.berths
+               &::before
+                  content: "\e972"
+
+            &:not(:last-of-type)
+               margin:
+                  right: 25px
+
+   &:hover
+
+      .box-details
+
+         &::before
+            +transform (translate(0, 0))
+            visibility: visible
+            opacity: 1
+
+      .box-meta
+         +transform (translate(0, 0))
+         visibility: visible
+         opacity: 1
+
+      img
+         +transform (scale(1))
+
+/* --- Loading Boats Box --- */
+
+.load-boats-box
+   display: none
+
+   .boat-box
+      +transition (all 350ms ease-in-out)
+      opacity: 0
+
+   &.open
+
+      .boat-box
+         opacity: 1

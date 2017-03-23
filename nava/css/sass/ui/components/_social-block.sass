@@ -1,0 +1,35 @@
+.social-block
+   font-size: 0
+   line-height: 1em
+
+   li
+      display: inline-block
+
+      &:not(:last-of-type)
+         margin:
+            right: 20px
+
+      i,
+      a
+         display: inline-block
+         border-radius: 50%
+
+      i
+         text-align: center
+         font-weight: 500
+         +transition (inherit)
+         background: #717171
+         line-height: 44px
+         font-size: 18px
+         color: $white
+         height: 44px
+         width: 44px
+
+         &:hover
+
+            &.icon-facebook
+               background: #3b5998
+            &.icon-twitter
+               background: #55acee
+            &.icon-google-plus
+               background: #dd4b39

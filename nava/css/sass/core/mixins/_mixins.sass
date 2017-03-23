@@ -1,0 +1,55 @@
+=transition ($transition)
+	-webkit-transition: $transition
+	transition: $transition
+
+=rotate ($value)
+	-webkit-transform: rotate($value)
+	-ms-transform: rotate($value)
+	transform: rotate($value)
+
+=scale ($value)
+	-webkit-transform: scale($value)
+	-ms-transform: scale($value)
+	transform: scale($value)
+
+=translateY ($value)
+	-webkit-transform: translateY($value)
+	-ms-transform: translateY($value)
+	transform: translateY($value)
+
+=translateX ($value)
+	-webkit-transform: translateX($value)
+	-ms-transform: translateX($value)
+	transform: translateX($value)
+
+=transform-origion ($value)
+	-webkit-transform-origin: $value
+	-ms-transform-origin: $value
+	transform-origin: $value
+
+=transform ($properties)
+	-webkit-transform: $properties
+	-ms-transform: $properties
+	transform: $properties
+
+=placeholder-style ($color)
+	color: $color
+
+=apply-placeholder ($color)
+	&::-webkit-input-placeholder
+		+placeholder-style($color)
+	&:-moz-placeholder
+		+placeholder-style($color)
+	&.placeholder
+		+placeholder-style($color)
+
+=box-shadow ($properties)
+	-webkit-box-shadow: $properties
+	box-shadow: $properties
+
+=animation ($properties)
+	-webkit-animation: $properties
+	-moz-animation: $properties
+	-ms-animation: $properties
+	-o-animation: $properties
+	animation: $properties
