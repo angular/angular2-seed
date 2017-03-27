@@ -1,0 +1,95 @@
+.hero-box
+   background:
+      image: url(../img/hero-background.jpg)
+      size: cover
+      position: center
+      attachment: fixed
+   padding: 300px 0
+
+   .hero-text
+
+      h1,
+      p
+         text-transform: uppercase
+         line-height: 1em
+         color: $white
+
+      h1
+         font-family: $Raleway
+         letter-spacing: .08em
+         font-weight: 700
+         font-size: 72px
+         line-height: 1em
+         margin: 0 0 15px
+
+      p
+         letter-spacing: .04em
+         line-height: 1em
+         font-size: 30px
+         margin: 0 0 80px
+
+   @media (max-width: $screen-sm-min)
+      padding: 200px 0
+
+      .hero-text
+
+         h1
+            font-size: 36px
+
+         p
+            font-size: 20px
+
+/* ----- Statistics ----- */
+
+.statistics-box
+   display: flex
+   padding: 30px 10px
+   margin:
+      top: -70px
+   width: 100%
+   align-items: center
+   justify-content: space-between
+   background: $white
+   border-radius: 5px
+   +box-shadow (0px 0px 30px 0px rgba(52, 52, 52, .15))
+
+   .statistics-item
+      text-align: center
+      display: flex
+      flex: 1
+      flex-direction: column
+      padding: 10px 0
+
+      .value
+         display: block
+         font-weight: 700
+         line-height: 1em
+         color: #343434
+         font-size: 30px
+         letter-spacing: .04em
+         margin: 0 0 12.5px
+
+      .title
+         margin: 0
+         font-size: 18px
+         color: #717171
+         line-height: 1em
+
+      &:not(:last-of-type)
+         border:
+            right: 1px solid #d4d4d4
+
+   @media (max-width: $screen-sm-min)
+      flex-direction: column
+
+      .statistics-item
+
+         &:not(:last-of-type)
+            border: 0
+            margin:
+               bottom: 15px
+            padding:
+               bottom: 15px
+            min-width: 80%
+            border:
+               bottom: 1px solid #d4d4d4

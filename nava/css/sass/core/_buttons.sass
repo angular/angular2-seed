@@ -1,0 +1,87 @@
+.btn
+   +transition (all 225ms ease-in-out)
+   text-overflow: ellipsis
+   vertical-align: middle
+   display: inline-block
+   white-space: nowrap
+   overflow: hidden
+
+   &.btn-special
+      background: $red-1
+      line-height: 60px
+      border-radius: 5px
+      color: $white
+      height: 60px
+      font-family: $Raleway
+      font-weight: 700
+      font-size: 14px
+      letter-spacing: .04em
+      text-transform: uppercase
+      padding: 0 40px
+
+      &:hover
+         background: #34495e
+
+      &:not(.no-icon)
+
+         &::before
+            content: "\e902"
+            font-family: icomoon
+            display: inline-block
+            margin:
+               right: 12.5px
+
+   &.btn-outlined
+      color: $white
+      height: 40px
+      line-height: 38px
+      border: 1px solid $white
+      border-radius: 5px
+      font-weight: 700
+      font-family: $Raleway
+      text-transform: uppercase
+      letter-spacing: .04em
+      font-size: 15px
+      padding: 0 35px
+      min-width: 140px
+
+      &:hover
+         background: $white
+         color: #2c3e50
+
+   &.btn-default
+      position: relative
+      margin:
+         top: 40px
+      height: 60px
+      line-height: 58px
+      border-radius: 5px
+      border: 1px solid #bdbdbd
+      font-size: 14px
+      font-weight: 700
+      font-family: $Raleway
+      text-transform: uppercase
+      color: $dark-2
+      letter-spacing: .04em
+      padding: 0 40px
+
+      .text
+         +transition (all 200ms ease-in-out)
+
+      i
+         opacity: 0
+         position: absolute
+         top: calc(50% - 7px)
+         left: calc(50% - 7px)
+
+      &:hover
+         background: lighten(#f0f0f0, 2%)
+
+      &.active
+
+         .text
+            opacity: 0
+
+         i
+            +animation (spin .75s linear infinite)
+            opacity: 1

@@ -1,0 +1,91 @@
+input[type="number"],
+input[type="search"],
+input[type="email"],
+input[type="text"],
+input[type="url"],
+input[type="password"],
+input[type="submit"],
+textarea
+	+transition (all 200ms ease-in-out)
+	-webkit-appearance: none
+	border-radius: 0
+
+input,
+button,
+textarea
+
+	&:focus
+		outline: none
+
+/* ----- Destinations Form ----- */
+
+.destinations-form
+	display: block
+	max-width: 770px
+	margin: 0 auto
+	position: relative
+
+	.input-line
+		display: block
+		width: 100%
+
+		.form-input
+			width: 100%
+			height: 60px
+			border: 0
+			padding: 0 240px 0 30px
+			font-size: 14px
+			font-family: $Raleway
+			letter-spacing: .04em
+			border-radius: 5px
+			color: #2c3e50
+
+			&:focus,
+			&.has-value
+				background: lighten(#f2f2f2, 3%)
+
+			@media (max-width: $screen-sm-min)
+				padding:
+					right: 190px
+
+	.form-submit
+		position: absolute
+		right: 0
+		top: 0
+		border-top-left-radius: 0 !important
+		border-bottom-left-radius: 0 !important
+
+		@media (max-width: $screen-sm-min)
+			padding: 0 15px !important
+
+/* ----- Subscribe Form ----- */
+
+.subscribe-form
+	display: block
+	position: relative
+	margin:
+		bottom: 35px
+
+	input[type="text"]
+		display: block
+		width: 100%
+		height: 40px
+		border-radius: 5px
+		padding: 0 155px 0 20px
+		font-size: 14px
+		+apply-placeholder(#717171)
+		color: #2c3e50
+
+	.btn
+		border-top-left-radius: 0 !important
+		border-bottom-left-radius: 0 !important
+		position: absolute
+		height: 40px !important
+		line-height: 40px !important
+		right: 0
+		top: 0
+		font-size: 14px !important
+		font-weight: 500 !important
+		font-family: $OpenSans !important
+		letter-spacing: .02em
+		padding: 0 30px !important

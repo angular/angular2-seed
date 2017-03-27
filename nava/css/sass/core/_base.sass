@@ -1,0 +1,185 @@
+*
+	margin: 0
+	border: 0
+	padding: 0
+	font-size: 100%
+	box-sizing: border-box
+
+	&:before,
+	&:after
+		box-sizing: border-box
+
+body
+	//color: $grey
+	font-size: 15px
+	font-family: $OpenSans
+	font-size: $main-text-size
+	line-height: $main-base-line
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	margin: 0 0 .5em
+	font-weight: 700
+	line-height: 1.35em
+
+	@media (max-width: $screen-lg-min)
+		line-height: 1.25em
+
+	@media (max-width: $screen-md-min)
+		line-height: 1.2em
+
+	@media (max-width: $screen-sm-min)
+		line-height: 1.15em
+
+h1
+	font-size: 40px
+
+	@media (max-width: $screen-lg-min)
+		font-size: 36px
+
+	@media (max-width: $screen-md-min)
+		font-size: 32px
+
+	@media (max-width: $screen-sm-min)
+		font-size: 28px
+
+h2
+	font-size: 30px
+
+	@media (max-width: $screen-lg-min)
+		font-size: 26px
+
+	@media (max-width: $screen-md-min)
+		font-size: 22px
+
+	@media (max-width: $screen-sm-min)
+		font-size: 18px
+
+h3
+	font-size: 22px
+
+	@media (max-width: $screen-lg-min)
+		font-size: 20px
+
+	@media (max-width: $screen-md-min)
+		font-size: 18px
+
+	@media (max-width: $screen-sm-min)
+		font-size: 16px
+
+h4
+	font-size: 15px
+
+h5
+	font-size: 13px
+
+h6
+	font-size: 11px
+
+p
+	letter-spacing: .02em
+	margin: 0 0 1em
+	font-size: 15px
+
+img
+	max-width: 100%
+	height: auto
+
+ul,
+ol
+	letter-spacing: .1em
+	padding: 0 0 0 30px
+	margin: 0 0 20px
+	font-size: 13px
+	color: #a1a1a1
+
+a
+	+transition (all 170ms)
+	text-decoration: none
+	color: inherit
+
+	&:hover, &:focus, &:active
+		text-decoration: none
+		color: inherit
+
+html .row-fit
+	margin: 0
+
+	[class*="col-"]
+		padding: 0
+
+html .row-fit-10
+	margin: 0 -5px
+
+	[class*="col-"]
+		padding: 0 5px
+
+html .row-fit-40
+	margin: 0 -20px
+
+	[class*="col-"]
+		padding: 0 20px
+
+.no-padding
+	padding: 0 !important
+
+.no-margin
+	margin: 0 !important
+
+.white-bg
+	background: #fff !important
+
+.no-select
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+
+.align-left
+	text-align: left
+
+.align-center
+	text-align: center
+
+.align-center-important
+	text-align: center !important
+
+.align-right
+	text-align: right
+
+.clean-list
+	list-style-type: none
+	letter-spacing: 0em
+	padding: 0
+	margin: 0
+
+	li
+		list-style-type: none
+
+.responsive-media
+	position: relative
+	margin: 0 0 30px
+
+	iframe
+		position: absolute
+		height: 100%
+		width: 100%
+		bottom: 0
+		right: 0
+		left: 0
+		top: 0
+
+	&.ratio16by9
+		padding-bottom: 56.25%
+
+body
+	+transition (all 300ms ease-in-out)
+	opacity: 0
+
+	&.dom-ready
+		opacity: 1

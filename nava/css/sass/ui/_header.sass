@@ -1,0 +1,46 @@
+.main-header
+   position: absolute
+   padding: 35px 0
+   z-index: 9
+   right: 0
+   left: 0
+   top: 0
+
+   .header-content
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+   .site-nav
+      display: flex
+      align-items: center
+
+      .site-links
+
+         li
+            display: inline-block
+            margin:
+               right: 45px
+            color: $white
+            text-transform: uppercase
+            font-size: 16px
+            font-weight: 700
+            font-family: $Raleway
+            letter-spacing: .04em
+
+            a
+
+               &:hover
+                  color: $red-1
+
+   @media (min-width: 1400px)
+
+      .header-content
+         margin: 0 -100px
+
+   @media (max-width: $screen-sm-min)
+
+      .site-nav
+
+         .site-links
+            display: none
