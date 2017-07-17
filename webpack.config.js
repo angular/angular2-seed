@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Webpack Config
 var webpackConfig = {
@@ -16,12 +17,17 @@ var webpackConfig = {
   plugins: [
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
-      path.resolve(__dirname, './src'),
+      /angular(\\|\/)core(\\|\/)@angular/,
+      path.resolve(__dirname, '../src'),
       {
         // your Angular Async Route paths relative to this root directory
       }
     ),
+
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+
   ],
 
   module: {
