@@ -18,8 +18,7 @@ var webpackConfig = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, '../src'),
-      {
+      path.resolve(__dirname, '../src'), {
         // your Angular Async Route paths relative to this root directory
       }
     ),
@@ -41,6 +40,11 @@ var webpackConfig = {
           'angular2-router-loader'
         ]
       },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
+      },
       { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
       { test: /\.html$/, loader: 'raw-loader' }
     ]
@@ -60,8 +64,8 @@ var defaultConfig = {
   },
 
   resolve: {
-    extensions: [ '.ts', '.js' ],
-    modules: [ path.resolve(__dirname, 'node_modules') ]
+    extensions: ['.ts', '.js'],
+    modules: [path.resolve(__dirname, 'node_modules')]
   },
 
   devServer: {
